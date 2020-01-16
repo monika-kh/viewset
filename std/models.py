@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class University(models.Model):
     name = models.CharField(max_length=50)
 
@@ -12,14 +13,17 @@ class University(models.Model):
     def __str__(self):
         return self.name
 
+
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    university_name = models.ForeignKey(University, on_delete=models.CASCADE, related_name='student')
+    university_name = models.ForeignKey(
+        University, on_delete=models.CASCADE, related_name="student"
+    )
 
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = "Students"
 
     def __str__(self):
-        return '%s %s' % (self.first_name, self.last_name)
+        return "%s %s" % (self.first_name, self.last_name)
