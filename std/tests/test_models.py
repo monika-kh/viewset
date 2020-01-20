@@ -1,3 +1,6 @@
+model test cases using factroy boy
+from .factories import UniversityFactory, StudentFactory
+
 from std.models import University, Student
 from django.test import TestCase
 from .factories import UniversityFactory, StudentFactory
@@ -18,34 +21,32 @@ class StudentModelTest(TestCase):
                                  last_name="singh",
                                  university_name=university_obj)
 
-
         self.assertEqual(student.first_name, 'monika')
         self.assertEqual(student.last_name, 'singh')
         self.assertEqual(student.university_name, university_obj)
 # def setUp(self):
-    #
-    #     # Set up non-modified objects used by all test methods
-    #     University.objects.create(name='BITS')
-    #
-    # def test_name_label(self):
-    #     university = University.objects.get(id=1)
-    #     field_lable = university._meta.get_field('name').verbose_name
-    #     self.assertEquals(field_lable, 'name')
-    #
-    #
-    #
-    # def test_name_max_length(self):
-    #     university = University.objects.get(id=1)
-    #     max_length = university._meta.get_field('name').max_length
-    #     self.assertEquals(max_length, 50)
-    #
-    #
-    #
-    # def test_object_name(self):
-    #     university = University.objects.get(id=1)
-    #     expected_object_name = f'{university.name}'
-    #     self.assertEquals(expected_object_name, str(university))
-
+#
+#     # Set up non-modified objects used by all test methods
+#     University.objects.create(name='BITS')
+#
+# def test_name_label(self):
+#     university = University.objects.get(id=1)
+#     field_lable = university._meta.get_field('name').verbose_name
+#     self.assertEquals(field_lable, 'name')
+#
+#
+#
+# def test_name_max_length(self):
+#     university = University.objects.get(id=1)
+#     max_length = university._meta.get_field('name').max_length
+#     self.assertEquals(max_length, 50)
+#
+#
+#
+# def test_object_name(self):
+#     university = University.objects.get(id=1)
+#     expected_object_name = f'{university.name}'
+#     self.assertEquals(expected_object_name, str(university))
 
 
 #     def setUp(self):
@@ -69,12 +70,3 @@ class StudentModelTest(TestCase):
 #         self.assertEqual(qs[0].first_name, 'soni')
 #         self.assertEqual(qs[0].last_name, 'singh')
 #         self.assertEqual(qs[0].university_name, Student.university_name)
-#
-
-
-
-
-
-
-
-
