@@ -6,14 +6,15 @@ from django.test import TestCase
 from rest_framework.test import APIClient, APITestCase
 
 
-class StudentModelTest(APITestCase):
+class University_Student_Test(APITestCase):
     def test_student(self):
 
-        data = {"name": "data"}
+        data = {"name": "data"}                       # university model
         res = self.client.post('/university/universities/',data, format="json")
         self.assertEqual(res.status_code, 201)
 
-        id_id =  res.data.get('id')
+        # student model
+        id_id =  res.data.get('id')                   # id of university
         data = {
             "first_name":"dee",
             "last_name":'dets',
