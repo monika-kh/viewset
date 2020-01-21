@@ -1,29 +1,29 @@
-model test cases using factroy boy
-from .factories import UniversityFactory, StudentFactory
-
-from std.models import University, Student
-from django.test import TestCase
-from .factories import UniversityFactory, StudentFactory
-
-
-class UniversityModelTest(TestCase):
-    def test_university(self):
-        university = UniversityFactory(name='SGSITS')
-        self.assertEqual(university.name, 'SGSITS')
-
-
-class StudentModelTest(TestCase):
-    def test_student(self):
-        # for University.instance error-create object of related foreignkey model
-        university_obj = UniversityFactory(name='SGSITS')
-
-        student = StudentFactory(first_name="monika",
-                                 last_name="singh",
-                                 university_name=university_obj)
-
-        self.assertEqual(student.first_name, 'monika')
-        self.assertEqual(student.last_name, 'singh')
-        self.assertEqual(student.university_name, university_obj)
+# #model test cases using factroy boy
+# from .factories import UniversityFactory, StudentFactory
+#
+# from std.models import University, Student
+# from django.test import TestCase
+# from .factories import UniversityFactory, StudentFactory
+#
+#
+# class UniversityModelTest(TestCase):
+#     def test_university(self):
+#         university = UniversityFactory(name='SGSITS')
+#         self.assertEqual(university.name, 'SGSITS')
+#
+#
+# class StudentModelTest(TestCase):
+#     def test_student(self):
+#         # for University.instance error-create object of related foreignkey model
+#         university_obj = UniversityFactory(name='SGSITS')
+#
+#         student = StudentFactory(first_name="monika",
+#                                  last_name="singh",
+#                                  university_name=university_obj)
+#
+#         self.assertEqual(student.first_name, 'monika')
+#         self.assertEqual(student.last_name, 'singh')
+#         self.assertEqual(student.university_name, university_obj)
 # def setUp(self):
 #
 #     # Set up non-modified objects used by all test methods

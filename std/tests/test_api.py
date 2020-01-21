@@ -12,6 +12,8 @@ class University_Student_Test(APITestCase):
         data = {"name": "data"}                       # university model
         res = self.client.post('/university/universities/',data, format="json")
         self.assertEqual(res.status_code, 201)
+        res_g = self.client.get('/university/universities/1/',data, format="json")
+        self.assertEqual(res_g.status_code, 200)
 
         # student model
         id_id =  res.data.get('id')                   # id of university
@@ -22,6 +24,7 @@ class University_Student_Test(APITestCase):
         }
         res1 = self.client.post('/university/students/',data, format="json")
         self.assertEqual(res1.status_code, 201)
+
         res1 = self.client.get('/university/students/1/', format="json")
         self.assertEqual(res1.status_code, 200)
 
